@@ -1,5 +1,5 @@
 # flutter_spider_fx MT
-单线程版本
+Flutter爬虫框架，帮助开发者快速在移动设备上构建爬虫，单线程版本
 
 ## 参考资料
 - dart语法学习：https://juejin.im/post/5d7caa75f265da039a28b6b7
@@ -11,7 +11,7 @@
     - https://www.cnblogs.com/buchizaodian/p/10831409.html
 
 
-## 遇到问题
+## 遇到的问题
 - 问题：Illegal argument in isolate message : (object is a regular Dart Instance)
 
 >解答：Sending an object entails serializing all it's fields, you are sending object1 which is a Worker object, one of it's fields is externalReference which is of Type ExternalClass and one of the fields of ExternalClass is a closure (_internalClosure).
