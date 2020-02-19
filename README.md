@@ -9,7 +9,7 @@ Flutter爬虫框架，帮助开发者快速在移动设备上构建爬虫，单�
 - DataTable参考：
     - Flutter之DataTable使用详解：https://juejin.im/post/5b73841951882561086e4906
     - https://www.cnblogs.com/buchizaodian/p/10831409.html
-
+- [译] Flutter 核心概念详解： Widget、State、Context 及 InheritedWidget：https://juejin.im/post/5c768ad2f265da2dce1f535c
 
 ## 遇到的问题
 - 问题：Illegal argument in isolate message : (object is a regular Dart Instance)
