@@ -1,6 +1,8 @@
 # flutter_spider_fx MT
 Flutter爬虫框架，帮助开发者快速在移动设备上构建爬虫，单线程版本
 
+详情请见博客文章：https://zhuanlan.zhihu.com/p/108028434
+
 ## 参考资料
 - dart语法学习：https://juejin.im/post/5d7caa75f265da039a28b6b7
 - path_provider博客：https://juejin.im/post/5c7f2f2ae51d4575d911172a
