@@ -3,6 +3,21 @@ Flutter爬虫框架，帮助开发者快速在移动设备上构建爬虫，单�
 
 详情请见博客文章：https://zhuanlan.zhihu.com/p/108028434
 
+## 截图
+<img src="./screenshots/Screenshot_1582126494.png" style="zoom: 33%;" />
+
+## 架构
+
+![](./screenshots/Framework.png)
+
+SpiderTask基类，所有爬虫类都从这个类派生，SpiderTask内自己维护一个TaskConfig任务配置对象和一个日志对象。如下图：
+
+![](./screenshots/SpiderTask.png)
+
+至于数据持久化的，我用了另外一个类，采用单例模式，在app启动的时候初始化。
+
+![](./screenshots/Persistence+持久化.png)
+
 ## 参考资料
 - dart语法学习：https://juejin.im/post/5d7caa75f265da039a28b6b7
 - path_provider博客：https://juejin.im/post/5c7f2f2ae51d4575d911172a

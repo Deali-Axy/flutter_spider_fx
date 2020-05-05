@@ -5,7 +5,6 @@ import 'package:flutter_spider_fx/framework/index.dart';
 import 'package:flutter_spider_fx/route/task_details.dart';
 import 'package:flutter_spider_fx/spider/cnradio_news_spider.dart';
 import 'package:flutter_spider_fx/spider/ithome_spider.dart';
-import 'package:flutter_spider_fx/spider/mzitu_spider.dart';
 import 'package:flutter_spider_fx/spider/test_spider.dart';
 import 'package:permission_handler/permission_handler.dart';
 
@@ -36,7 +35,6 @@ class _MyHomePageState extends State<MyHomePage> {
     // 记住 initState 里面没有context的！
     print('init state');
 
-    _tasks.add(MzituSpider(context));
     _tasks.add(TestSpider(context));
     _tasks.add(ItHomeSpider(context));
     _tasks.add(CNRadioNewsSpider(context));
