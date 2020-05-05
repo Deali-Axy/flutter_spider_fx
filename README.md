@@ -39,3 +39,6 @@ SpiderTask基类，所有爬虫类都从这个类派生，SpiderTask内自己维
 
 ## license
 GPL v2
+
+## 欢迎交流
+我整理了一系列的技术文章和资料，在公众号「程序设计实验室」后台回复 linux、flutter、c#、netcore、android、java、python 等可获取相关技术文章和资料，同时有任何问题都可以在公众号后台留言~
