@@ -54,12 +54,12 @@ class MzituSpider extends SpiderTask {
   init() async {
     var jsonObj = jsonDecode(await DefaultAssetBundle.of(context).loadString("assets/mzitu/existed_list.json"));
     existedList = jsonObj['items'];
-    if (config.containsKey('existedList')) {
-      List<String> tempList = config.get('existedList');
-      existedList.addAll(tempList);
-    } else {
-      config.set('existedList', <String>[]);
-    }
+//    if (config.containsKey('existedList')) {
+//      List<String> tempList = config.get('existedList');
+//      existedList.addAll(tempList);
+//    } else {
+//      config.set('existedList', <String>[]);
+//    }
     libDir = path.join(Persistence.externalStorageDirectory, name);
     logging.info('获取到根目录：$libDir');
   }
@@ -90,7 +90,7 @@ class MzituSpider extends SpiderTask {
 
   /// 爬取相册内的图片
   Future<List<String>> getAlbumImages(Album album) async {
-    if (existedList.contains(album.num)) return [];
+    if (existedList.contains(album.num) || Persistence.exists(path.join(libDir, album.num))) return [];
     var document = await CatHttp.getDocument(album.pageUrl);
     var pageNavi = document.querySelector('.pagenavi');
     // 提取总页数
@@ -106,8 +106,8 @@ class MzituSpider extends SpiderTask {
       downloadImage(album, pageUrl, imageUrl);
     }
     existedList.add(album.num);
-    List<String> confList = config.get('existedList');
-    confList.add(album.num);
+//    List<String> confList = config.get('existedList');
+//    confList.add(album.num);
     return album.imagesUrl;
   }
 
@@ -128,15 +128,22 @@ class MzituSpider extends SpiderTask {
     }
   }
 
-  @override
-  start() async {
-    super.start();
+  Future<List<Album>> getAlbumsFromAsset() async {
     var albums = <Album>[];
     var jsonStr = await DefaultAssetBundle.of(context).loadString("assets/mzitu/albums.json");
     var jsonObj = json.decode(jsonStr);
     for (var item in jsonObj) {
       albums.add(Album.fromJson(item));
     }
+
+    return albums;
+  }
+
+  @override
+  start() async {
+    super.start();
+    var albums = await getAlbums();
+
     for (var album in albums) {
       await getAlbumImages(album);
     }

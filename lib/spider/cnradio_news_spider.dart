@@ -11,7 +11,6 @@ class CNRadioNewsSpider extends SpiderTask {
     super.start();
     var dom = await CatHttp.getDocument(url, encoding: 'gb2312');
     var links = dom.querySelectorAll('.contentPanel .lh30 a');
-    logging.info('hello');
     links.forEach((link) {
       logging.debug(link.attributes['href']);
       logging.info(link.text);

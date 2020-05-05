@@ -31,6 +31,7 @@ class Persistence {
   static bool exists(String path) => FileSystemEntity.typeSync(path) != FileSystemEntityType.notFound;
 
   static Future init() async {
+    if (isInit) return;
     _preferences = await SharedPreferences.getInstance();
 
     if (Platform.isAndroid) {
@@ -44,5 +45,6 @@ class Persistence {
       _downloadsDirectory = (await getDownloadsDirectory()).path;
       _libraryDirectory = (await getLibraryDirectory()).path;
     }
+    isInit = true;
   }
 }

@@ -5,6 +5,7 @@ import 'package:flutter_spider_fx/framework/index.dart';
 import 'package:flutter_spider_fx/route/task_details.dart';
 import 'package:flutter_spider_fx/spider/cnradio_news_spider.dart';
 import 'package:flutter_spider_fx/spider/ithome_spider.dart';
+import 'package:flutter_spider_fx/spider/ligui_spider.dart';
 import 'package:flutter_spider_fx/spider/mzitu_spider.dart';
 import 'package:flutter_spider_fx/spider/test_spider.dart';
 import 'package:permission_handler/permission_handler.dart';
